@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIFT конвертер</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="card mt-4 shadow rounded-0 border-0">
+        <div class="card-header">
+            <h4 class="text-center">Конвертер в формат GIFT</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3 col-lg-4 mx-auto">
+                <label for="fileinput" class="form-label">Выберите текстовый файл</label>
+                <input class="form-control" type="file" accept="text/plain" id="fileinput">
+            </div>
+
+            <div class="text-center my-4" style="display: none" id="spinner">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-lg">
+                    <h5>Входные данные:</h5>
+                    <code>
+                        <textarea class="form-control" id="input" rows="17" disabled></textarea>
+                    </code>
+                </div>
+                <div class="col-lg">
+                    <h5>Результат:</h5>
+                    <code>
+                        <textarea class="form-control" id="output" rows="17"></textarea>
+                    </code>
+                    <div class="clearfix mt-2">
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end disabled" id="download" download >Скачать в формате TXT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
