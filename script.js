@@ -15,10 +15,22 @@ const grouper = (array, i = 0) => {
 }
 
 const giftFormatter = (array) => {
-    return array.map((test) =>
-        test.map((item, index) =>
-            ((index === 0) ? '::' : (index === 1) ? '=' : '~') + item
-        )
+    return array.map((test) => {
+
+            const isEmpty = test.length === 0;
+            if (!isEmpty) {
+                test.unshift(test[0]);
+                test.splice(2, 0, '{');
+            }
+
+            test = test.map((item, index) =>
+                ((index === 0 || index === 1) ? '::' : (index === 3) ? '=' : (index !== 2) ? '~' : '') + item
+            )
+            if (!isEmpty)
+                test.push('}');
+
+            return test;
+        }
     )
 }
 
@@ -66,4 +78,3 @@ const main = () => {
 }
 
 main();
-
